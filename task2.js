@@ -8,16 +8,17 @@
  * in the tagline should be updated to reflect this as the user scrolls. 
  */
 
-$(window).scroll(function(event){
-	var hotelCount = $("#hotel_listings li.tabsParent").length;
-	$(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
-});
-
 $(document).ready(function(){
+	// sets up the inital summary headline
 	var headline = $(".listing_summary > h3").html();
 	var hotelCount = $("#hotel_listings li.tabsParent").length;
+	var summary = $(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
 
-	// sets up the inital summary headline
-	$(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
+	// as the user scrolls, the function gets the number of list items in the hotel listing unordered list
+	// and reflects the changes on the headline
+	$(window).scroll(function(){
+		var hotelCount = $("#hotel_listings li.tabsParent").length;
+		$(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
+	});
 
 });
