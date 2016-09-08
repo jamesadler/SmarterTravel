@@ -9,6 +9,6 @@
  */
 
 var headline = $(".listing_summary > h3").html();
-var fullDest = $(".field.city:first > input").val().split(",");
-var destName = fullDest[0];
-console.log(destName);
+var summary = headline.replace('Searching', 'Showing XX out of');
+
+console.log(summary);
