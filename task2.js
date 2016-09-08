@@ -8,7 +8,16 @@
  * in the tagline should be updated to reflect this as the user scrolls. 
  */
 
-var headline = $(".listing_summary > h3").html();
-var summary = headline.replace('Searching', 'Showing XX out of');
+$(window).scroll(function(event){
+	var hotelCount = $("#hotel_listings li.tabsParent").length;
+	$(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
+});
 
-console.log(summary);
+$(document).ready(function(){
+	var headline = $(".listing_summary > h3").html();
+	var hotelCount = $("#hotel_listings li.tabsParent").length;
+
+	// sets up the inital summary headline
+	$(".listing_summary > h3").html(headline.replace('Searching', 'Showing '+hotelCount+' out of'));
+
+});
