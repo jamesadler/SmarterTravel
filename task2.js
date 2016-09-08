@@ -22,3 +22,13 @@ $(document).ready(function(){
 	});
 
 });
+
+/*
+var headline = document.getElementsByClassName("listing_summary")[0].firstChild.innerText;
+var hotelCount = document.getElementsByClassName("tabsParent").length;
+document.getElementsByClassName("listing_summary")[0].firstChild.innerText = headline.replace('Searching', 'Showing '+hotelCount+' out of');
+
+window.onscroll = function (e) {  
+	var hotelCount = document.getElementsByClassName("tabsParent").length;
+	document.getElementsByClassName("listing_summary")[0].firstChild.innerText = headline.replace('Searching', 'Showing '+hotelCount+' out of');
+} 
