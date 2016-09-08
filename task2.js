@@ -7,3 +7,8 @@
  * so as you scroll down more hotels are loaded in via AJAX. The number of hotels 
  * in the tagline should be updated to reflect this as the user scrolls. 
  */
+
+var headline = $(".listing_summary > h3").html();
+var fullDest = $(".field.city:first > input").val().split(",");
+var destName = fullDest[0];
+console.log(destName);
