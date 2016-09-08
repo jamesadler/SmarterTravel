@@ -11,3 +11,9 @@
  *    listings page. Note that If the user chooses the same hotel twice, the 
  *    name should not be duplicated in the list of 'Selected hotels'. 
  */
+
+$(document).ready(function(){
+	$("a.prominent_button.do_show_rates").each(function(){
+		$(this).attr('target','_blank');
+	});
+});
