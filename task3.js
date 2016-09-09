@@ -11,7 +11,6 @@
  *    listings page. Note that If the user chooses the same hotel twice, the 
  *    name should not be duplicated in the list of 'Selected hotels'. 
  */
-
 $(document).ready(function(){
 	$("a.prominent_button.do_show_rates").each(function(){
 		$(this).attr('target','_blank');
@@ -25,9 +24,13 @@ $(document).ready(function(){
 		'font-size' : '16px'
 	});
 	$("#selectedHotels").append('<div class="row" id="hotelNames"></div>');
-	$("#hotelNames").append('<div class="content"></div>');
+	$("#hotelNames").append('<div class="content"><ol id="selectedHotelsList"></ol></div>');
 
 	$("a.prominent_button.do_show_rates").click(function(){
-		console.log($("a.prominent_button.do_show_rates:first").closest(":has( .hotel_detail_link)").find(".hotel_detail_link").html());
+		var hotelName = $(this).closest(":has( .hotel_detail_link)").find(".hotel_detail_link").html();
+
+		if($("#selectedHotelsList :contains('"+hotelName+"')").length == 0){
+			$("#selectedHotelsList").append("<li>"+hotelName+"</li>");
+		}
 	});
 });
