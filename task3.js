@@ -16,4 +16,18 @@ $(document).ready(function(){
 	$("a.prominent_button.do_show_rates").each(function(){
 		$(this).attr('target','_blank');
 	});
+
+	$("#curated_geo").after('<div class="module" id="selectedHotels"></div>');
+	$("#selectedHotels").append('<div class="container_title">Selected Hotels</div>');
+	$("#selectedHotels > .container_title").css({
+		'padding' : '5px 14px',
+		'font-weight' : 'bold',
+		'font-size' : '16px'
+	});
+	$("#selectedHotels").append('<div class="row" id="hotelNames"></div>');
+	$("#hotelNames").append('<div class="content"></div>');
+
+	$("a.prominent_button.do_show_rates").click(function(){
+		console.log($("a.prominent_button.do_show_rates:first").closest(":has( .hotel_detail_link)").find(".hotel_detail_link").html());
+	});
 });
